@@ -1,6 +1,7 @@
 package MyClass;
 
 import MyClass.Tripulante;
+import MyClass.Partida;
 
 public class MisTripulantes {
     
@@ -35,9 +36,32 @@ public class MisTripulantes {
         tCian.mascota="Hamster";
         tCian.impostor= false;
         
+        /*
         tAmarillo.verInfo();
         tNaranja.verInfo();
         tCian.verInfo();
+        */
+        
+        Mapa mapa1 = new Mapa();
+        mapa1.nombre="Polus";
+        
+       /*  Partida   */
+       Partida p1 = new Partida();
+       
+       //los tripulantes
+       p1.velocidad= 100.0;
+       p1.tiempoVoto=40;
+       p1.numeroTareas=5;
+       p1.servidor="America";
+       p1.rangoVision=1.0;
+       p1.privado= true;
+       p1.codigo="BDSFW";
+       p1.mapa = mapa1;
+       
+       
+        
+        
+        
         
         
        

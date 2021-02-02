@@ -4,7 +4,7 @@ import MyClass.Tripulante;
 
 public class Main {
 
-
+ 
     public static void main(String[] args) {
         
       String tripulante1 = "amongus 1";
