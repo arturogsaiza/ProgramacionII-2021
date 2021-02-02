@@ -34,7 +34,7 @@ public class MisTripulantes {
         tCian.color="Cian";
         tCian.sombrero="Huevito";
         tCian.mascota="Hamster";
-        tCian.impostor= false;
+        tCian.impostor= true;
         
         /*
         tAmarillo.verInfo();
@@ -42,14 +42,16 @@ public class MisTripulantes {
         tCian.verInfo();
         */
         
+        //Este es un comentario
+        
         Mapa mapa1 = new Mapa();
         mapa1.nombre="Polus";
         
        /*  Partida   */
        Partida p1 = new Partida();
        
-       //los tripulantes
-       p1.velocidad= 100.0;
+   
+       p1.velocidad= 105.0;
        p1.tiempoVoto=40;
        p1.numeroTareas=5;
        p1.servidor="America";
