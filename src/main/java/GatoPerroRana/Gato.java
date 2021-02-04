@@ -10,6 +10,8 @@ public class Gato {
     
     public void maullar () {
         System.out.println("Miau");
+        
+        
     }
     
     public void ronronear () {
@@ -23,4 +25,17 @@ public class Gato {
     public void correr () {
         System.out.println("Corre");
     }
+    
+    public void seguidoresEnTikTok(int seguidores) { 
+        System.out.println("Tiene "+seguidores+" en tiktok!");
+        if(seguidores > 1000000){
+            System.out.println("El gato es famoso!");
+        }else{
+             System.out.println("El gato aun no es famoso!");
+        }
+        
+        
+    }
+        
+        
 }

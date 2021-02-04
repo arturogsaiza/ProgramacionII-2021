@@ -21,5 +21,10 @@ public class Perro {
    void brincar (){
        System.out.println("Brincando");
    }
+   
+   void  nacimiento(int anio){
+       int anioNacimiento = anio - this.edad;
+       System.out.println("Este perro nacio en el año "+anioNacimiento);
+   }
 
 }
