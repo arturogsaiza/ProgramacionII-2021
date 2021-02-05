@@ -10,7 +10,8 @@ public class Main {
         Gato garfield = new Gato();
         Perro odie = new Perro();
         Rana rene = new Rana();
-       // Estudiante luis = new Estudiante();
+        Estudiante juanita = new Estudiante();
+        
         
         garfield.color="Naranja";
         garfield.edad=10;
@@ -46,6 +47,36 @@ public class Main {
         rene.croar();
         rene.brincar(1.5);
         rene.brincar(6.75);
+        
+        juanita.nombre="juanita";
+        juanita.apellido="Perez";
+        juanita.anionacimiento=2002;
+        juanita.carrera="Ingenieria en Software";
+        
+        juanita.saludo("Pepe");
+        juanita.saludo("Ramon");
+        juanita.saludo("Luis");
+        juanita.saludo("Fabian");
+        juanita.saludo("Jesus");
+        juanita.saludo("Taisa");
+        
+        
+        Materia  m1 = new Materia();
+        m1.nombre="\n Estructura de Datos";
+        double promedio = m1.calificacion(9, 7.5, 8);
+        m1.aprobo(promedio);
+        
+        Materia  m2 = new Materia();
+        m2.nombre="Programación 2";
+        promedio = m2.calificacion(5, 6, 4.5);
+        m2.aprobo(promedio);
+        
+        m2.sumar(5, 5,4,4);
+        m2.sumarInfinito(2,6,8,10,12,14,6,1,2,3,4,5,666);
+       
+       
+        
+        
     }
     
 }
