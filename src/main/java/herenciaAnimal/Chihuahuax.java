@@ -9,11 +9,10 @@ package herenciaAnimal;
  *
  * @author Arturo
  */
-public class Chihuahuax  extends  Chihuahua{
+public class Chihuahuax   {
     
     public Chihuahuax(String juguete, String estilista, String pelaje, String tamaño, String color, String nombre) {
-        super(juguete, estilista, pelaje, tamaño, color, nombre);
-    }
+     }
     
  
     
