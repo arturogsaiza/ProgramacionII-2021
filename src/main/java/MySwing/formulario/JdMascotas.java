@@ -12,15 +12,14 @@ import java.util.ArrayList;
  * @author Arturo
  */
 public class JdMascotas extends javax.swing.JDialog {
-    ArrayList<Mascota> listaMascotaJD;
+   
     /**
      * Creates new form jdMascotas
      */
-    public JdMascotas(java.awt.Frame parent, boolean modal, ArrayList<Mascota> listaMascotas , String titulo) {
+    public JdMascotas(java.awt.Frame parent, boolean modal,    String titulo) {
         super(parent, modal);
         initComponents();
-    lblTitulo.setText(titulo);
-    listaMascotaJD = listaMascotas;
+    lblTitulo.setText(titulo); 
         
     }
 
@@ -33,12 +32,12 @@ public class JdMascotas extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         lblTitulo = new javax.swing.JLabel();
         txfNombre = new javax.swing.JTextField();
         txfTipo = new javax.swing.JTextField();
         txfDueno = new javax.swing.JTextField();
         txfColor = new javax.swing.JTextField();
-        txfSexo = new javax.swing.JTextField();
         txfEdad = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -47,6 +46,11 @@ public class JdMascotas extends javax.swing.JDialog {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         btnAgregar = new javax.swing.JButton();
+        rdbSexoMacho = new javax.swing.JRadioButton();
+        rdbSexoHembra = new javax.swing.JRadioButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        txaBigrafia = new javax.swing.JTextArea();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -78,46 +82,69 @@ public class JdMascotas extends javax.swing.JDialog {
             }
         });
 
+        buttonGroup1.add(rdbSexoMacho);
+        rdbSexoMacho.setText("Macho");
+
+        buttonGroup1.add(rdbSexoHembra);
+        rdbSexoHembra.setText("Hembra");
+
+        txaBigrafia.setColumns(20);
+        txaBigrafia.setRows(5);
+        jScrollPane1.setViewportView(txaBigrafia);
+
+        jLabel7.setText("Biografia");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(lblTitulo)
+                .addGap(25, 25, 25))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(8, 8, 8))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel7)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblTitulo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(69, 69, 69)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel1)
-                                    .addComponent(jLabel2)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jLabel4)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6))
+                                .addComponent(jLabel6)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(txfNombre, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txfTipo, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txfDueno, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txfColor)
-                                    .addComponent(txfSexo)
-                                    .addComponent(txfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(0, 19, Short.MAX_VALUE))
+                                .addComponent(txfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel5)
+                                .addGap(30, 30, 30)
+                                .addComponent(rdbSexoMacho)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rdbSexoHembra))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(btnAgregar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addGap(97, 97, 97)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(txfNombre, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfTipo, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfDueno, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txfColor, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(33, 33, 33)
-                .addComponent(lblTitulo)
                 .addGap(35, 35, 35)
+                .addComponent(lblTitulo)
+                .addGap(33, 33, 33)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -134,17 +161,25 @@ public class JdMascotas extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txfColor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txfSexo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rdbSexoMacho)
+                    .addComponent(rdbSexoHembra)
                     .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel6)
                     .addComponent(txfEdad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 81, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 48, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addGap(78, 78, 78)))
                 .addComponent(btnAgregar, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(31, 31, 31))
         );
 
         pack();
@@ -155,20 +190,31 @@ public class JdMascotas extends javax.swing.JDialog {
     }//GEN-LAST:event_txfEdadActionPerformed
 
     private void btnAgregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAgregarActionPerformed
-
+        String sexo="";
+        
+        if(rdbSexoMacho.isSelected()){
+             sexo= "Macho";
+        }
+        if(rdbSexoHembra.isSelected()){
+             sexo= "Hembra";
+        } 
+        
+        
         Mascota mascota = new Mascota(
                 txfNombre.getText(), 
                 txfTipo.getText(), 
                 txfDueno.getText(), 
                 txfColor.getText(), 
-                txfSexo.getText(), 
+                sexo,
                 Integer.parseInt(txfEdad.getText())
         );
         
-        listaMascotaJD.add(mascota);
+        MainJFrame.listaMascotas.add(mascota);
         
         
-        System.out.println(listaMascotaJD);
+        System.out.println("---Biografia Mascota-");
+        System.out.println(txaBigrafia.getText());
+  
         
         
         
@@ -182,18 +228,23 @@ public class JdMascotas extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAgregar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JLabel lblTitulo;
+    private javax.swing.JRadioButton rdbSexoHembra;
+    private javax.swing.JRadioButton rdbSexoMacho;
+    private javax.swing.JTextArea txaBigrafia;
     private javax.swing.JTextField txfColor;
     private javax.swing.JTextField txfDueno;
     private javax.swing.JTextField txfEdad;
     private javax.swing.JTextField txfNombre;
-    private javax.swing.JTextField txfSexo;
     private javax.swing.JTextField txfTipo;
     // End of variables declaration//GEN-END:variables
 }

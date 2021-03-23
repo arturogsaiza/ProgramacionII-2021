@@ -6,6 +6,7 @@
 package MySwing.formulario;
 
 import java.util.ArrayList;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -13,7 +14,7 @@ import java.util.ArrayList;
  */
 public class MainJFrame extends javax.swing.JFrame {
 
- ArrayList<Mascota> listaMascotas = new ArrayList<Mascota>();
+static public ArrayList<Mascota> listaMascotas = new ArrayList<Mascota>();
     
     public MainJFrame() {
         initComponents();
@@ -30,7 +31,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblMascotas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,18 +42,30 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblMascotas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Nombre", "Tipo", "Dueño", "Sexo", "Edad"
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane1.setViewportView(tblMascotas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -82,11 +95,65 @@ public class MainJFrame extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
      
-        JdMascotas jdmascotas = new JdMascotas(this, true, listaMascotas, "Agregar una mascota" );
-        jdmascotas.setVisible(true);
+      /*  JdMascotas jdmascotas = new JdMascotas(this, true, "Agregar una mascota" );
+        jdmascotas.setVisible(true);        
+        System.out.println("Estoy en jframe");*/
+         
+      JdMascotas  jdMascotas = new JdMascotas(this, true,   "Agregar Mascota");
+      jdMascotas.setVisible(true);
+      
+      DefaultTableModel  infoTabla = (DefaultTableModel)  tblMascotas.getModel();
+      
+      
+      
+      System.out.println("\n  ");
+      
+      
+     if(tblMascotas.getRowCount()>0){
         
-        System.out.println("Estoy en jframe");
-        
+         /*
+         for(int i=0; i<=tblMascotas.getRowCount(); i++){
+             System.out.println(i);
+             infoTabla.removeRow(i);
+          
+        }
+        */
+     }
+     
+      
+      
+      for(Mascota mascota : listaMascotas){ 
+          
+          Object [] fila = {
+           mascota.getNombre(), 
+           mascota.getTipo(), 
+           mascota.getDueno(), 
+           mascota.getColor(),
+           mascota.getSexo(), 
+           mascota.getEdad()};
+       
+       infoTabla.addRow(fila);
+          
+          System.out.println(mascota);
+      
+      }
+      
+      
+      
+      
+       
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -129,6 +196,6 @@ public class MainJFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblMascotas;
     // End of variables declaration//GEN-END:variables
 }
